@@ -18,9 +18,9 @@ class Product extends Model
         return $this->belongsTo(Cabang::class);
     }
 
-    public function transactionDetails()
+    public function transactions()
     {
-        return $this->hasMany(TransactionDetail::class);
+        return $this->hasMany(Transaction::class);
     }
 
     public function stockMovements()

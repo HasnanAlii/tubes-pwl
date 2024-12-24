@@ -20,7 +20,7 @@
                        <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
                           {{ __('Iventory') }}
                        </x-nav-link>
-                       <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
+                       <x-nav-link :href="route('transactions')" :active="request()->routeIs('transactions') ">
                        {{ __('Transactions') }}
                        </x-nav-link>
                       @endrole

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cabang;
 use App\Models\Product;
 use App\Models\Transaction;
 use App\Models\TransactionDetail;
@@ -10,17 +11,21 @@ use Illuminate\Http\Request;
 class TransactionController extends Controller
 {
     public function index(Request $request)
-        {
-        
-        $user = auth()->user();
-        
-        $transactions= Transaction::where('cabang_id', $user->cabang_id)->get(); 
-        
-        return view('transactions.index', compact('transactions'));
-        
-       
+{
+    $cabang_id = $request->input('cabang_id');
+    
+    $cabang = Cabang::all();
+
+    $transactions = [];
+    if ($cabang_id) {
+        $transactions = Transaction::where('cabang_id', $cabang_id)
+            ->with('product') 
+            ->get();
     }
 
+    return view('transactions.index' ,compact('cabang','transactions'));
+}
+    
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -40,7 +45,7 @@ class TransactionController extends Controller
         ]);
 
         foreach ($validated['details'] as $detail) {
-            TransactionDetail::create([
+            Transaction::create([
                 'transaction_id' => $transaction->id,
                 'product_id' => $detail['product_id'],
                 'quantity' => $detail['quantity'],
