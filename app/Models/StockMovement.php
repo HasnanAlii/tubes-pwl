@@ -9,7 +9,12 @@ class StockMovement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['cabang_id', 'product_id', 'user_id', 'type', 'quantity'];
+    protected $fillable = [
+        'cabang_id', 
+        'product_id', 
+        'user_id', 
+        'type', 
+        'quantity'];
 
     public function cabang()
     {

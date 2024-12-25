@@ -29,12 +29,20 @@
                                 <td class="text-center">{{ $product->sku }}</td>
                                 <td class="text-center">{{ $product->price }}</td>
                                 <td class="text-center">{{ $product->stock }}</td>
-                                
+                                <td>
+                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form>
+                                </td>     
                             </tr>
                         @endforeach
                     </x-table>
-                
 
+                    @if (auth()->user() && auth()->user()->role === 'pegawai gudang')
+                        <x-primary-button tag="a" href="{{ route('products.create') }}">Tambah Produk</x-primary-button>
+                    @endif
 
                 </div>
             </div>
