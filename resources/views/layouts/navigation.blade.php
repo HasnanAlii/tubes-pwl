@@ -39,7 +39,10 @@
                       @endrole
                       @hasrole('pegawai gudang')
                        <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
-                          {{ __('Iventory') }}
+                          {{ __('Produk') }}
+                       </x-nav-link>
+                       <x-nav-link :href="route('stock-movements.index')" :active="request()->routeIs('stock-movements.index') ">
+                          {{ __('Stok') }}
                        </x-nav-link>
                       @endrole
                       @hasrole('kasir')

@@ -31,11 +31,17 @@ class ProductController extends Controller
     public function show(Request $request)
     {
     
-    $user = auth()->user();
-    
-    $products = Product::where('cabang_id', $user->cabang_id)->get(); 
-    
-    return view('products.indexother', compact('products'));
+        $user = auth()->user();
+        
+        $products = Product::where('cabang_id', $user->cabang_id)->get(); 
+        
+        return view('products.indexother', compact('products'));
+    }
+
+    public function create()
+    {
+        $cabangs = Cabang::all(); // Mengambil semua data cabang untuk pilihan
+        return view('products.create', compact('cabangs'));
     }
 
     public function store(Request $request)
@@ -50,6 +56,15 @@ class ProductController extends Controller
         ]);
 
         $product = Product::create($validated);
-        return response()->json($product, 201);
+        return redirect()->route('products.indexother')->with('success', 'Produk berhasil ditambahkan.');
     }
+
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id); // Cari produk berdasarkan ID, jika tidak ditemukan, akan memunculkan error 404
+        $product->delete(); // Hapus produk
+
+        return redirect()->route('products.indexother')->with('success', 'Produk berhasil dihapus.');
+    }
+
 }
