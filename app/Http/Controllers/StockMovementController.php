@@ -10,7 +10,9 @@ class StockMovementController extends Controller
 {
     public function index()
     {
-        $stockMovements = StockMovement::with(['cabang', 'product', 'user'])->get();
+        $user = auth()->user();
+        
+        $stockMovements = StockMovement::where('cabang_id',$user->cabang_id)->get();
 
         return view('stock-movement.index', compact('stockMovements'));
     }
