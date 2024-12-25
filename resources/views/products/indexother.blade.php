@@ -9,7 +9,14 @@
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-              
+                    @hasrole('pegawai-gudang')
+                    <div class="flex justify-end px-20">
+                        <x-primary-button tag="a" href="{{ route('warehouse.products.create') }}">
+                            Tambah Produk
+                        </x-primary-button>
+                    </div>
+                    @endhasrole
+
                     <x-table>
                         <x-slot name="header">
                             <tr>
@@ -30,11 +37,11 @@
                                 <td class="text-center">{{ $product->price }}</td>
                                 <td class="text-center">{{ $product->stock }}</td>
                                 @hasrole('pegawai-gudang')
-                                <td>                  
+                                <td class="text-center">                
                                     <form action="{{ route('warehouse.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                        <x-danger-button type="submit" class="btn btn-danger">Hapus</x-danger-button>
                                     </form>
                                 </td>     
                              @endhasrole
@@ -42,10 +49,7 @@
                         @endforeach
                     </x-table>
 
-                    @hasrole('pegawai-gudang')
-                        <x-primary-button tag="a" href="{{ route('warehouse.products.create') }}">Tambah Produk</x-primary-button>
-                        @endhasrole
-
+                 
 
                 </div>
             </div>
