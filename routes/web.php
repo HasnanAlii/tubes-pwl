@@ -63,6 +63,30 @@ Route::middleware(['auth', 'role:kasir'])->group(function () {
 
 });
 
+// //manager
+// Route::middleware(['auth', 'role:manager'])->group(function () {
+//     Route::get('/products', [ProductController::class, 'show'])->name('index');
+// });
+
+// //supervisor
+// Route::middleware(['auth', 'role:supervisor'])->group(function () {
+//     Route::get('/products', [ProductController::class, 'show'])->name('index');
+
+// });
+
+// //pegawai gudang
+// Route::middleware(['auth', 'role:pegawai-gudang'])->group(function () {
+//     Route::get('/products', [ProductController::class, 'show'])->name('index');
+
+// });
+
+// //kasir
+// Route::middleware(['auth', 'role:kasir'])->group(function () {
+//     Route::get('/products', [ProductController::class, 'show'])->name('index');
+//     Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions');
+
+// });
+
 require __DIR__ . '/auth.php';
 
 

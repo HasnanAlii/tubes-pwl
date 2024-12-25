@@ -14,13 +14,13 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::factory()->create([
-           'name' => 'Pak Jayusman',
+           'name' => 'Jayusman',
                 'email' => 'jayusman@admin.com',
                 'role' => 'owner',
                 'cabang_id' => null,
                 'created_at' => now(),
                 'updated_at' => now(),
-           
+
         ])->assignRole('owner');
         
         //Cabang 1
@@ -45,11 +45,11 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang1@gmail.com',
-            'role' => 'pegawai gudang',
+            'role' => 'pegawai-gudang',
             'cabang_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
-         ])->assignRole('pegawai gudang');
+         ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
             'name' => 'kasir',
@@ -83,11 +83,11 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang2@gmail.com',
-            'role' => 'pegawai gudang',
+            'role' => 'pegawai-gudang',
             'cabang_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
-         ])->assignRole('pegawai gudang');
+         ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
             'name' => 'kasir',
@@ -121,11 +121,11 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang3@gmail.com',
-            'role' => 'pegawai gudang',
+            'role' => 'pegawai-gudang',
             'cabang_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
-         ])->assignRole('pegawai gudang');
+         ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
             'name' => 'kasir',
@@ -159,11 +159,11 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang4@gmail.com',
-            'role' => 'pegawai gudang',
+            'role' => 'pegawai-gudang',
             'cabang_id' => 4,
             'created_at' => now(),
             'updated_at' => now(),
-         ])->assignRole('pegawai gudang');
+         ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
             'name' => 'kasir',
@@ -197,11 +197,11 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang5@gmail.com',
-            'role' => 'pegawai gudang',
+            'role' => 'pegawai-gudang',
             'cabang_id' => 5,
             'created_at' => now(),
             'updated_at' => now(),
-         ])->assignRole('pegawai gudang');
+         ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
             'name' => 'kasir',
