@@ -42,7 +42,7 @@
                             {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
                         </div>
                         @endhasrole
-                        @hasallroles('pegawai gudang')
+                        @hasallroles('pegawai-gudang')
                         {{ __("Selamat Datang, Di Minimarket Pak Jayusman " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
                             {{ __("Mr/Mrs " . Auth::user()->name . "!") }}

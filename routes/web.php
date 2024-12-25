@@ -3,6 +3,7 @@
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\LoansDetailController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookController;
@@ -26,67 +27,38 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//owner
+// Owner
 Route::middleware(['auth', 'role:owner'])->group(function () {
-    Route::get('/products', [ProductController::class, 'index'])->name('index');
+    Route::get('/owner/products', [ProductController::class, 'index'])->name('owner.products.index');
+    Route::get('/owner/transactions', [TransactionController::class, 'index'])->name('owner.transactions.index');
 });
 
-//manager
+// Manager
 Route::middleware(['auth', 'role:manager'])->group(function () {
-    Route::get('/products', [ProductController::class, 'show'])->name('index');
+    Route::get('/manager/products', [ProductController::class, 'show'])->name('manager.products.index');
 });
 
-//supervisor
+// Supervisor
 Route::middleware(['auth', 'role:supervisor'])->group(function () {
-    Route::get('/products', [ProductController::class, 'show'])->name('index');
-
+    Route::get('/supervisor/products', [ProductController::class, 'show'])->name('supervisor.products.index');
 });
 
-//pegawai gudang
-Route::middleware(['auth', 'role:pegawai gudang|kasir'])->group(function () {
-    Route::get('/products', [ProductController::class, 'show'])->name('index');
-    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
-    Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
-    Route::get('/products/indexother', [ProductController::class, 'show'])->name('products.indexother');
-    Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+// Pegawai Gudang
+Route::middleware(['auth', 'role:pegawai-gudang'])->group(function () {
+    Route::get('/warehouse/products', [ProductController::class, 'show'])->name('warehouse.products.index');
+    Route::get('/warehouse/products/create', [ProductController::class, 'create'])->name('warehouse.products.create');
+    Route::post('/warehouse/products/store', [ProductController::class, 'store'])->name('warehouse.products.store');
+    Route::get('/warehouse/products/indexother', [ProductController::class, 'show'])->name('warehouse.products.indexother');
+    Route::delete('/warehouse/products/{id}', [ProductController::class, 'destroy'])->name('warehouse.products.destroy');
 
-    Route::get('/stock-movements', [StockMovementController::class, 'index'])->name('stock-movements.index');
-    Route::get('/stock-movements/create', [StockMovementController::class, 'create'])->name('stock-movements.create');
-    Route::post('/stock-movements/store', [StockMovementController::class, 'store'])->name('stock-movements.store');
-
+    Route::get('/warehouse/stock-movements', [StockMovementController::class, 'index'])->name('stock-movements.index');
+    Route::get('/warehouse/stock-movements/create', [StockMovementController::class, 'create'])->name('stock-movements.create');
+    Route::post('/warehouse/stock-movements/store', [StockMovementController::class, 'store'])->name('stock-movements.store');
 });
 
-//kasir
+// Kasir
 Route::middleware(['auth', 'role:kasir'])->group(function () {
-    // Route::get('/products', [ProductController::class, 'show'])->name('index');
-    Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions');
-
+    Route::get('/cashier/products', [ProductController::class, 'show'])->name('cashier.products.index');
 });
-
-// //manager
-// Route::middleware(['auth', 'role:manager'])->group(function () {
-//     Route::get('/products', [ProductController::class, 'show'])->name('index');
-// });
-
-// //supervisor
-// Route::middleware(['auth', 'role:supervisor'])->group(function () {
-//     Route::get('/products', [ProductController::class, 'show'])->name('index');
-
-// });
-
-// //pegawai gudang
-// Route::middleware(['auth', 'role:pegawai-gudang'])->group(function () {
-//     Route::get('/products', [ProductController::class, 'show'])->name('index');
-
-// });
-
-// //kasir
-// Route::middleware(['auth', 'role:kasir'])->group(function () {
-//     Route::get('/products', [ProductController::class, 'show'])->name('index');
-//     Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions');
-
-// });
 
 require __DIR__ . '/auth.php';
-
-

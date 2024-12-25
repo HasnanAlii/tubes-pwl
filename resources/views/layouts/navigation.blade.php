@@ -17,10 +17,10 @@
                        
 
                        @hasrole('owner')
-                       <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
+                       <x-nav-link :href="route('owner.products.index')" :active="request()->routeIs('owner.products.index') ">
                           {{ __('Iventory') }}
                        </x-nav-link>
-                       <x-nav-link :href="route('transactions')" :active="request()->routeIs('transactions') ">
+                       <x-nav-link :href="route('owner.transactions.index')" :active="request()->routeIs('owner.transactions.index') ">
                        {{ __('Transactions') }}
                        </x-nav-link>
                       @endrole
@@ -37,8 +37,8 @@
                        {{ __('Transactions') }}
                        </x-nav-link>
                       @endrole
-                      @hasrole('pegawai gudang')
-                       <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
+                      @hasrole('pegawai-gudang')
+                       <x-nav-link :href="route('warehouse.products.index')" :active="request()->routeIs('warehouse.products.index') ">
                           {{ __('Produk') }}
                        </x-nav-link>
                        <x-nav-link :href="route('stock-movements.index')" :active="request()->routeIs('stock-movements.index') ">

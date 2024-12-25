@@ -56,7 +56,7 @@ class ProductController extends Controller
         ]);
 
         $product = Product::create($validated);
-        return redirect()->route('products.indexother')->with('success', 'Produk berhasil ditambahkan.');
+        return redirect()->route('warehouse.products.indexother')->with('success', 'Produk berhasil ditambahkan.');
     }
 
     public function destroy($id)
@@ -64,7 +64,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id); // Cari produk berdasarkan ID, jika tidak ditemukan, akan memunculkan error 404
         $product->delete(); // Hapus produk
 
-        return redirect()->route('products.indexother')->with('success', 'Produk berhasil dihapus.');
+        return redirect()->route('warehouse.products.indexother')->with('success', 'Produk berhasil dihapus.');
     }
 
 }

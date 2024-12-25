@@ -9,7 +9,7 @@
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <form method="GET" action="{{ route('transactions') }}">
+                    <form method="GET" action="{{ route('owner.transactions.index') }}">
                         <div class="mb-4">
                             <select id="cabang_id" name="cabang_id" class="inline w-2/12 pt-2.5 pb-2.5 text-black rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                                 <option value="">-- Pilih Cabang --</option>
