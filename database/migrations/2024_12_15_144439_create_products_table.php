@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('cabang_id')->constrained('cabang')->onDelete('cascade');
             $table->string('name');
             $table->string('sku')->unique();
-            $table->decimal('price', 10, 2);
+            $table->decimal('price', 10, 3);
             $table->integer('stock');
             $table->integer('stock_min');
             $table->timestamps();

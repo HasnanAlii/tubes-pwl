@@ -26,17 +26,19 @@ class ProductController extends Controller
     
         $cabang = Cabang::all(); 
     
-        return view('products.index', compact('cabang','products'));
-    }
-    public function show(Request $request)
-    {
+        return view('products.index', compact('cabang','products'));    
+}
     
-        $user = auth()->user();
-        
-        $products = Product::where('cabang_id', $user->cabang_id)->get(); 
-        
-        return view('products.indexother', compact('products'));
-    }
+public function show(Request $request)
+{
+    $user = auth()->user();
+    
+    // Gunakan paginate untuk membatasi hasil menjadi 7 per halaman
+    $products = Product::where('cabang_id', $user->cabang_id)->paginate(5);
+    
+    return view('products.indexother', compact('products'));
+}
+
 
     public function create()
     {

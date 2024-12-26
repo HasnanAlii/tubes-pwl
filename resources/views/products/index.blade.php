@@ -37,18 +37,21 @@
                                 <th class="text-center" scope="col">Cabang</th>
                             </tr>
                         </x-slot>
-
+                    
                         @foreach ($products as $product)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center">{{ $product->name }}</td>
                                 <td class="text-center">{{ $product->sku }}</td>
-                                <td class="text-center">{{ $product->price }}</td>
+                                <td class="text-center">RP. {{ $product->price }}</td>
                                 <td class="text-center">{{ $product->stock }}</td>
                                 <td class="text-center">{{ $product->cabang->name }}</td>
                             </tr>
                         @endforeach
                     </x-table>
+                    
+                  
+                    
                 @else
                     <p class="text-gray-600 dark:text-gray-400">Please select a branch to view the inventory.</p>
                 @endif

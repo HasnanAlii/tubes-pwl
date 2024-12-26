@@ -28,14 +28,15 @@
                                 <th class="text-center" scope="col">Aksi</th>
                             </tr>
                         </x-slot>
-
                         @foreach ($products as $product)
-                            <tr>
-                                <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center">{{ $product->name }}</td>
-                                <td class="text-center">{{ $product->sku }}</td>
-                                <td class="text-center">{{ $product->price }}</td>
-                                <td class="text-center">{{ $product->stock }}</td>
+                        <tr>
+                            <!-- Menampilkan nomor urut yang berkelanjutan -->
+                            <td class="text-center">{{ $loop->iteration + ($products->currentPage() - 1) * $products->perPage() }}</td>
+                            <td class="text-center">{{ $product->name }}</td>
+                            <td class="text-center">{{ $product->sku }}</td>
+                            <td class="text-center">RP. {{ $product->price }} </td>
+                            <td class="text-center">{{ $product->stock }}</td>
+                      
                                 @hasrole('pegawai-gudang')
                                 <td class="text-center">                
                                     <form action="{{ route('warehouse.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?');">
@@ -48,7 +49,14 @@
                             </tr>
                         @endforeach
                     </x-table>
-
+                    <div class="mt-4">
+                        <div class="flex justify-center">
+                            <ul class="flex space-x-2">
+                                {{ $products->links('pagination::tailwind') }}
+                            </ul>
+                        </div>
+                    </div>
+                    
                  
 
                 </div>

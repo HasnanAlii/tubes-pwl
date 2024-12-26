@@ -65,71 +65,77 @@
                             focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 
                             dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
                                 <div class="flex size-20 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-32 mt-20">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#FF2D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#f32b22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                                 </div>
                             
                             
                     <div class="relative flex flex-col items-center justify-center gap-6">
                         <div id="docs-card-content" class="flex flex-col items-center gap-6">
                             <div class="pt-3 sm:pt-5 lg:pt-0 items-center">
-                                <p class="text-2xl font-bold text-black dark:text-white mt-6">Selamat Datang Di Perpustakaan Modern</p>
+                                <p class="text-2xl font-bold text-black dark:text-white mt-6">
+                                    Selamat Datang Di Minimarket Pak Jayusman
+                                </p>
                             </div>
                             <div class="pt-3 sm:pt-5 lg:pt-0">
-                                <p>kami menyediakan koleksi bahan bacaan, baik dalam bentuk cetak maupun digital,
-                                     untuk memenuhi kebutuhan informasi, edukasi, dan rekreasi masyarakat. 
-                                     Perpustakaan berfungsi sebagai pusat ilmu pengetahuan dan budaya, 
-                                     tempat individu dapat belajar, meneliti, dan mengembangkan wawasan mereka.
+                                <p>Minimarket Pak Jayusman adalah destinasi belanja yang mengutamakan kenyamanan dan kepuasan pelanggan.
+                                   Berlokasi strategis di tengah komunitas,minimarket ini menyediakan berbagai kebutuhan sehari-hari,
+                                   mulai dari sembako, makanan ringan, minuman, hingga produk rumah tangga.
                                 </p>      
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                            
-                            
-                          
-    
+                
+                
+                                
+                                
+                                <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
+                                    <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16 mt-7">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF2D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    </div>
+
+                                    <div class="pt-3 sm:pt-5">
+                                        <h2 class="text-xl font-semibold text-black dark:text-white">Keanggotaan dan Poin</h2>
+                                        <p class="mt-4 text-sm/relaxed">
+                                            Minimarket ini menyediakan program keanggotaan yang memberikan keuntungan ekstra, 
+                                            seperti pengumpulan poin dari setiap transaksi yang dapat ditukar dengan diskon atau hadiah menarik.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    
+                             <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
+                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16 mt-7">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f32b22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+
+                             <div class="pt-3 sm:pt-5">
+                                        <h2 class="text-xl font-semibold text-black dark:text-white">Layanan 24 Jam</h2>
+                                <p class="mt-4 text-sm/relaxed">
+                                    Dengan operasional penuh selama 24 jam, minimarket ini siap melayani kebutuhan mendadak kapan saja, 
+                                    baik pagi, siang, maupun malam hari.
+                                
+                                                </p>
+                                    </div>
+                                </div>
                             <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
                                 <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16 mt-10">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF2D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                                 </div>
 
                                 <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Keamanan dan Keandalan</h2>
-                                    <p class="mt-4 text-sm/relaxed">Data pengguna kami lindungi dengan teknologi keamanan mutakhir. Anda dapat mempercayai kami untuk memberikan layanan yang stabil, terpercaya, dan aman.
+                                    <h2 class="text-xl font-semibold text-black dark:text-white">Keamanan dan Kenyamanan</h2>
+                                    <p class="mt-4 text-sm/relaxed">
+                                        Dilengkapi dengan kamera CCTV dan sistem tata udara yang baik, 
+                                        pelanggan dapat berbelanja dengan rasa aman dan nyaman di lingkungan yang bersih dan tertata rapi.
                                     </p>
                                 </div>
                             </div>
                             
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16 mt-7">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF2D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Personalisasi Layanan</h2>
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Aplikasi kami dirancang untuk memahami kebutuhan unik setiap pengguna, memberikan solusi yang relevan dan sesuai dengan preferensi Anda.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16 mt-7">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF2D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Pengalaman Pengguna yang Optimal</h2>
-                                    <p class="mt-4 text-sm/relaxed">Dengan desain aplikasi yang intuitif, cepat, dan mudah digunakan, kami memastikan pengalaman pelanggan tetap menjadi prioritas utama.
-                                        
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
                     </main>
 
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Sistem Informasi Perpustakaan By Hasnan
+                        Minimarket Pak Jayusman
                     </footer>
                 </div>
             </div>

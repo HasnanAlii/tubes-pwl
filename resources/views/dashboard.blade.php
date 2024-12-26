@@ -31,25 +31,25 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     @hasallroles('kasir')
-                        {{ __("Selamat Datang, Di Minimarket Pak Jayusman " . Auth::user()->cabang->name) }}
+                        {{ __("Selamat Datang, Di Minimarket Pak Jayusman Cabang " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
                             {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
                         </div>
                         @endhasrole
                         @hasallroles('supervisor')
-                        {{ __("Selamat Datang, Di Minimarket Pak Jayusman " . Auth::user()->cabang->name) }}
+                        {{ __("Selamat Datang, Di Minimarket Pak Jayusman Cabang " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
                             {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
                         </div>
                         @endhasrole
                         @hasallroles('pegawai-gudang')
-                        {{ __("Selamat Datang, Di Minimarket Pak Jayusman " . Auth::user()->cabang->name) }}
+                        {{ __("Selamat Datang, Di Minimarket Pak Jayusman Cabang " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
                             {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
                         </div>
                         @endhasrole
                         @hasallroles('manager')
-                        {{ __("Selamat Datang, Di Minimarket Pak Jayusman " . Auth::user()->cabang->name) }}
+                        {{ __("Selamat Datang, Di Minimarket Pak Jayusman Cabang " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
                             {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
                         </div>
