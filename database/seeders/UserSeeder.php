@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang1@gmail.com',
-            'role' => 'pegawai-gudang',
+            'role' => 'pegawai gudang',
             'cabang_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
@@ -83,7 +83,7 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang2@gmail.com',
-            'role' => 'pegawai-gudang',
+            'role' => 'pegawai gudang',
             'cabang_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
@@ -121,7 +121,7 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang3@gmail.com',
-            'role' => 'pegawai-gudang',
+            'role' => 'pegawai gudang',
             'cabang_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
@@ -159,7 +159,7 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang4@gmail.com',
-            'role' => 'pegawai-gudang',
+            'role' => 'pegawai gudang',
             'cabang_id' => 4,
             'created_at' => now(),
             'updated_at' => now(),
@@ -197,7 +197,7 @@ class UserSeeder extends Seeder
          User::factory()->create([
             'name' => 'pegawai gudang',
             'email' => 'pegawaigudang5@gmail.com',
-            'role' => 'pegawai-gudang',
+            'role' => 'pegawai gudang',
             'cabang_id' => 5,
             'created_at' => now(),
             'updated_at' => now(),
