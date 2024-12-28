@@ -57,8 +57,13 @@ class StockMovementController extends Controller
 
     // Buat riwayat stock movement
     StockMovement::create($validated);
+    $notification = array(
+        'message' => 'Stock berhasil ditambahkan.',
+        'alert-type' => 'success'
+    );
+    
 
-    return redirect()->route('stock-movements.index')->with('success', 'Stock movement berhasil ditambahkan.');
+    return redirect()->route('stock-movements.index')->with($notification);
 }
     
 }

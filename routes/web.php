@@ -59,6 +59,15 @@ Route::middleware(['auth', 'role:pegawai-gudang'])->group(function () {
 // Kasir
 Route::middleware(['auth', 'role:kasir'])->group(function () {
     Route::get('/cashier/products', [ProductController::class, 'show'])->name('cashier.products.index');
+    Route::get('/cashier/products/sell/{id}', [ProductController::class, 'sellProduct'])->name('cashier.products.sold');
+    Route::get('/cashier/products/sold/{id}', [ProductController::class, 'soldPage'])->name('cashier.products.sell');
+    Route::get('/cashier/transactions', [TransactionController::class, 'show'])->name('cashier.transactions.index');
+
+
+
+    
+
+   
 });
 
 require __DIR__ . '/auth.php';

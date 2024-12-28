@@ -30,8 +30,8 @@
                         <x-slot name="header">
                             <tr>
                                 <th class="text-center" scope="col">#</th>
-                                <th class="text-center" scope="col">Nama Produk</th>
-                                <th class="text-center" scope="col">SKU</th>
+                                <th class="text-start" scope="col">Nama Produk</th>
+                                <td class="text-start" scope="col">SKU</th>
                                 <th class="text-center" scope="col">Harga</th>
                                 <th class="text-center" scope="col">Stok</th>
                                 <th class="text-center" scope="col">Cabang</th>
@@ -41,8 +41,8 @@
                         @foreach ($products as $product)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center">{{ $product->name }}</td>
-                                <td class="text-center">{{ $product->sku }}</td>
+                                <td class="text-start">{{ $product->name }}</td>
+                                <td class="text-start">{{ $product->sku }}</td>
                                 <td class="text-center">RP. {{ $product->price }}</td>
                                 <td class="text-center">{{ $product->stock }}</td>
                                 <td class="text-center">{{ $product->cabang->name }}</td>

@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    // public function index()
-    // {
-    //     $products = Product::all();
-    //     return view('products.index', compact('products'));
-    // }
     public function index(Request $request)
     {
         $cabangId = $request->input('cabang_id');
@@ -32,17 +27,14 @@ class ProductController extends Controller
 public function show(Request $request)
 {
     $user = auth()->user();
-    
-    // Gunakan paginate untuk membatasi hasil menjadi 7 per halaman
     $products = Product::where('cabang_id', $user->cabang_id)->paginate(5);
-    
     return view('products.indexother', compact('products'));
 }
 
 
     public function create()
     {
-        $cabangs = Cabang::all(); // Mengambil semua data cabang untuk pilihan
+        $cabangs = Cabang::all(); 
         return view('products.create', compact('cabangs'));
     }
 
@@ -58,15 +50,65 @@ public function show(Request $request)
         ]);
 
         $product = Product::create($validated);
-        return redirect()->route('warehouse.products.indexother')->with('success', 'Produk berhasil ditambahkan.');
+        $notification = array(
+            'message' => 'Produk berhasil ditambahkan.',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('warehouse.products.indexother')->with($notification);
     }
 
     public function destroy($id)
     {
-        $product = Product::findOrFail($id); // Cari produk berdasarkan ID, jika tidak ditemukan, akan memunculkan error 404
-        $product->delete(); // Hapus produk
+        $product = Product::findOrFail($id);
+        $product->delete();
+        $notification = array(
+            'message' => 'Produk berhasil dihapus.',
+            'alert-type' => 'success'
+        );
 
-        return redirect()->route('warehouse.products.indexother')->with('success', 'Produk berhasil dihapus.');
+        return redirect()->route('warehouse.products.indexother')->with(  $notification);
     }
+ 
+    public function sellProduct(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+    
+        $request->validate([
+            'quantity' => 'required|integer|min:1|max:' . $product->stock,
+        ]);
+    
+        $quantity = $request->input('quantity');
+        $totalPrice = $quantity * $product->price;
+    
+        // Kurangi stok produk
+        $product->stock -= $quantity;
+        $product->save();
+    
+        // Buat transaksi
+        \DB::table('transactions')->insert([
+            'cabang_id' => auth()->user()->cabang_id, 
+            'user_id' => auth()->id(),
+            'product_id' => $product->id,
+            'quantity' => $quantity,
+            'price' => $product->price,
+            'subtotal' => $totalPrice,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+    
+        // Kirim notifikasi
+        $notification = array(
+            'message' => "Produk berhasil terjual! Total harga: Rp. " . number_format($totalPrice, 0, ',', '.') . ",-",
+            'alert-type' => 'success',
+        );
+    
+        return redirect()->route('cashier.products.index')->with($notification);
+    }
+    
+public function soldPage($id)
+{
+    $product = Product::findOrFail($id); // Pastikan produk ditemukan
+    return view('products.sold', compact('product'));
+}
 
 }

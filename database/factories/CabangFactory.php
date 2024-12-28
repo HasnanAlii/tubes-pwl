@@ -16,18 +16,28 @@ class CabangFactory extends Factory
      */
     public function definition(): array
     {
+        static $usedCabangs = []; 
 
         $cabangs = [
             'Jakarta', 'Bali', 'Cianjur', 'Bogor', 'Bandung'
-            
         ];
+
+        $availableCabangs = array_diff($cabangs, $usedCabangs);
+
+        if (empty($availableCabangs)) {
+            throw new \Exception("All cabang names have been used!");
+        }
+
        
-            return [
-                'name' => $this->faker->randomElement( $cabangs),
-                'address' => $this->faker->address(),
-                'phone' => $this->faker->phoneNumber(),
-            ];
-        
-    
+        $name = $this->faker->randomElement($availableCabangs);
+
+       
+        $usedCabangs[] = $name;
+
+        return [
+            'name' => $name,
+            'address' => $this->faker->address(),
+            'phone' => $this->faker->phoneNumber(),
+        ];
     }
 }

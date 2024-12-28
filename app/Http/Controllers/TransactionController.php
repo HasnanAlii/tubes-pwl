@@ -25,6 +25,13 @@ class TransactionController extends Controller
 
     return view('transactions.index' ,compact('cabang','transactions'));
 }
+public function show(Request $request)
+{
+    $user = auth()->user();
+    $transactions =  Transaction::where('cabang_id', $user->cabang_id)->paginate(5);
+    return view('transactions.indexother' ,compact('transactions'));
+}
+    
     
     public function store(Request $request)
     {

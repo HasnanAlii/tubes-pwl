@@ -17,7 +17,7 @@ class CabangSeeder extends Seeder
     public function run(): void
     {
         if (Cabang::count() < 5) {
-            $remaining = 5 - Cabang::count(); // Hitung sisa cabang yang perlu dibuat
+            $remaining = 5 - Cabang::count(); 
             Cabang::factory()->count($remaining)->create();
         }
     }

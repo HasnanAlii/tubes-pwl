@@ -22,7 +22,7 @@
                             <tr>
                                 <th class="text-center" scope="col">#</th>
                                 <th class="text-center" scope="col">Nama Produk</th>
-                                <th class="text-center" scope="col">SKU</th>
+                                <td class="text-start"  scope="col">SKU</th>
                                 <th class="text-center" scope="col">Harga</th>
                                 <th class="text-center" scope="col">Stok</th>
                                 <th class="text-center" scope="col">Aksi</th>
@@ -32,10 +32,19 @@
                         <tr>
                             <!-- Menampilkan nomor urut yang berkelanjutan -->
                             <td class="text-center">{{ $loop->iteration + ($products->currentPage() - 1) * $products->perPage() }}</td>
-                            <td class="text-center">{{ $product->name }}</td>
-                            <td class="text-center">{{ $product->sku }}</td>
+                            <td class="text-start">{{ $product->name }}</td>
+                            <td class="text-start">{{ $product->sku }}</td>
                             <td class="text-center">RP. {{ $product->price }} </td>
                             <td class="text-center">{{ $product->stock }}</td>
+                            @hasrole('kasir')
+                            <td class="text-center">                
+                                <form action="{{ route('cashier.products.sell', $product->id) }}" method="GET">
+                                    <x-succes-button type="submit" class="btn btn-Sold">Sold</x-succes-button>
+                                </form>
+                              
+                                
+                            </td>     
+                         @endhasrole
                       
                                 @hasrole('pegawai-gudang')
                                 <td class="text-center">                
@@ -44,11 +53,13 @@
                                         @method('DELETE')
                                         <x-danger-button type="submit" class="btn btn-danger">Hapus</x-danger-button>
                                     </form>
-                                </td>     
+                                 
+                              </td>    
                              @endhasrole
                             </tr>
                         @endforeach
                     </x-table>
+                   
                     <div class="mt-4">
                         <div class="flex justify-center">
                             <ul class="flex space-x-2">

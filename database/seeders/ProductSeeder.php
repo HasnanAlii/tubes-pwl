@@ -14,12 +14,9 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-
-
         $cabangs = Cabang::all();
 
         foreach ($cabangs as $cabang) {
-            // Buat 50 produk untuk setiap cabang
             Product::factory()->count(50)->create([
                 'cabang_id' => $cabang->id,
             ]);

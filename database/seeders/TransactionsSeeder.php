@@ -20,29 +20,218 @@ class TransactionsSeeder extends Seeder
         $cabang = Cabang::first();
         $product = Product::first();
 
-        // Insert sample transactions
         DB::table('transactions')->insert([
-            'cabang_id' => $cabang->id,  // Use the ID of the cabang
-            'user_id' => $user->id,  // Use the ID of the user
-            'product_id' => $product->id,  // Use the ID of the product
-            'quantity' => 2,  // Example quantity
-            'price' => 50.00,  // Example price
-            'subtotal' => 100.00,  // Example subtotal (quantity * price)
-            'created_at' => now(),
-            'updated_at' => now(),
+            // Data for cabang_id 1
+            [
+                'cabang_id' => 1, 
+                'user_id' => $user->id,  
+                'product_id' => 1,  
+                'quantity' => 1,  
+                'price' => 50.00,  
+                'subtotal' => 50.00 * 1, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 1, 
+                'user_id' => $user->id,  
+                'product_id' => 2,  
+                'quantity' => 2,  
+                'price' => 50.00,  
+                'subtotal' => 50.00 * 2, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 1, 
+                'user_id' => $user->id,  
+                'product_id' => 3,  
+                'quantity' => 3,  
+                'price' => 50.00,  
+                'subtotal' => 50.00 * 3, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 1, 
+                'user_id' => $user->id,  
+                'product_id' => 4,  
+                'quantity' => 4,  
+                'price' => 50.00,  
+                'subtotal' => 50.00 * 4, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        
+            // Data for cabang_id 2
+            [
+                'cabang_id' => 2, 
+                'user_id' => $user->id,  
+                'product_id' => 5,  
+                'quantity' => 1,  
+                'price' => 60.00,  
+                'subtotal' => 60.00 * 1, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 2, 
+                'user_id' => $user->id,  
+                'product_id' => 6,  
+                'quantity' => 2,  
+                'price' => 60.00,  
+                'subtotal' => 60.00 * 2, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 2, 
+                'user_id' => $user->id,  
+                'product_id' => 7,  
+                'quantity' => 3,  
+                'price' => 60.00,  
+                'subtotal' => 60.00 * 3, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 2, 
+                'user_id' => $user->id,  
+                'product_id' => 8,  
+                'quantity' => 4,  
+                'price' => 60.00,  
+                'subtotal' => 60.00 * 4, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        
+            // Data for cabang_id 3
+            [
+                'cabang_id' => 3, 
+                'user_id' => $user->id,  
+                'product_id' => 9,  
+                'quantity' => 1,  
+                'price' => 70.00,  
+                'subtotal' => 70.00 * 1, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 3, 
+                'user_id' => $user->id,  
+                'product_id' => 10,  
+                'quantity' => 2,  
+                'price' => 70.00,  
+                'subtotal' => 70.00 * 2, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 3, 
+                'user_id' => $user->id,  
+                'product_id' => 11,  
+                'quantity' => 3,  
+                'price' => 70.00,  
+                'subtotal' => 70.00 * 3, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 3, 
+                'user_id' => $user->id,  
+                'product_id' => 12,  
+                'quantity' => 4,  
+                'price' => 70.00,  
+                'subtotal' => 70.00 * 4, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        
+            // Data for cabang_id 4
+            [
+                'cabang_id' => 4, 
+                'user_id' => $user->id,  
+                'product_id' => 13,  
+                'quantity' => 1,  
+                'price' => 80.00,  
+                'subtotal' => 80.00 * 1, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 4, 
+                'user_id' => $user->id,  
+                'product_id' => 14,  
+                'quantity' => 2,  
+                'price' => 80.00,  
+                'subtotal' => 80.00 * 2, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 4, 
+                'user_id' => $user->id,  
+                'product_id' => 15,  
+                'quantity' => 3,  
+                'price' => 80.00,  
+                'subtotal' => 80.00 * 3, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 4, 
+                'user_id' => $user->id,  
+                'product_id' => 16,  
+                'quantity' => 4,  
+                'price' => 80.00,  
+                'subtotal' => 80.00 * 4, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        
+            // Data for cabang_id 5
+            [
+                'cabang_id' => 5, 
+                'user_id' => $user->id,  
+                'product_id' => 17,  
+                'quantity' => 1,  
+                'price' => 90.00,  
+                'subtotal' => 90.00 * 1, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 5, 
+                'user_id' => $user->id,  
+                'product_id' => 18,  
+                'quantity' => 2,  
+                'price' => 90.00,  
+                'subtotal' => 90.00 * 2, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 5, 
+                'user_id' => $user->id,  
+                'product_id' => 19,  
+                'quantity' => 3,  
+                'price' => 90.00,  
+                'subtotal' => 90.00 * 3, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'cabang_id' => 5, 
+                'user_id' => $user->id,  
+                'product_id' => 20,  
+                'quantity' => 4,  
+                'price' => 90.00,  
+                'subtotal' => 90.00 * 4, 
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
-
-        // You can add more transactions here, for example, with different quantities or products
-        DB::table('transactions')->insert([
-            'cabang_id' => $cabang->id,
-            'user_id' => $user->id,
-            'product_id' => $product->id + 1,  // Use the next product
-            'quantity' => 3,
-            'price' => 30.00,
-            'subtotal' => 90.00,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        
 
     }
 }

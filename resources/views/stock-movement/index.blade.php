@@ -16,7 +16,7 @@
                         <x-slot name="header">
                             <tr>
                                 <th class="text-center" scope="col">#</th>
-                                <th class="text-center" scope="col">Produk</th>
+                                <th class="text-start" scope="col">Produk</th>
                                 <th class="text-center" scope="col">Tipe</th>
                                 <th class="text-center" scope="col">Jumlah</th>
                                 <th class="text-center" scope="col">Tanggal</th>
@@ -26,7 +26,7 @@
                         @foreach ($stockMovements as $movement)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center">{{ $movement->product->name ?? '-' }}</td>
+                                <td class="text-start">{{ $movement->product->name ?? '-' }}</td>
                                 <td class="text-center">{{ $movement->type === 'in' ? 'Masuk' : 'Keluar' }}</td>
                                 <td class="text-center">{{ $movement->quantity }}</td>
                                 <td class="text-center">{{ $movement->created_at->format('d M Y, H:i') }}</td>

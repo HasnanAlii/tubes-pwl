@@ -46,9 +46,12 @@
                        </x-nav-link>
                       @endrole
                       @hasrole('kasir')
-                       <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
-                          {{ __('Transactions') }}
-                       </x-nav-link>
+                      <x-nav-link :href="route('cashier.products.index')" :active="request()->routeIs('cashier.products.index') ">
+                        {{ __('Produk') }}
+                     </x-nav-link>
+                     <x-nav-link :href="route('cashier.transactions.index')" :active="request()->routeIs('cashier.transactions.index') ">
+                        {{ __('Transactions') }}
+                        </x-nav-link>
                       @endrole
                     </x-nav-link>
                      
