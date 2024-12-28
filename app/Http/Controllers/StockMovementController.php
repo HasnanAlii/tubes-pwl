@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\StockMovement;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\PDF;
 
 class StockMovementController extends Controller
 {
@@ -64,6 +65,15 @@ class StockMovementController extends Controller
     
 
     return redirect()->route('stock-movements.index')->with($notification);
-}
+    }
+
+    public function export()
+    {
+        $stockMovements = StockMovement::with('product')->get();
+
+        $pdf = PDF::loadView('stock-movement.pdf', compact('stockMovements'));
+        return $pdf->stream('Stock.pdf'); // Menampilkan PDF langsung
+        // return $pdf->download('stock-movement.pdf'); // Untuk langsung diunduh
+    }
     
 }

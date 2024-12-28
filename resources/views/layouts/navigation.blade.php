@@ -33,8 +33,14 @@
                        </x-nav-link>
                       @endrole
                       @hasrole('supervisor')
-                       <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
+                       <x-nav-link :href="route('supervisor.products.index')" :active="request()->routeIs('supervisor.products.index') ">
+                       {{ __('Daftar produk') }}
+                       </x-nav-link>
+                       <x-nav-link :href="route('supervisor.transactions.index')" :active="request()->routeIs('supervisor.transactions.index') ">
                        {{ __('Transactions') }}
+                       </x-nav-link>
+                       <x-nav-link :href="route('stock-movements.index')" :active="request()->routeIs('stock-movements.index') ">
+                          {{ __('Stok') }}
                        </x-nav-link>
                       @endrole
                       @hasrole('pegawai-gudang')
