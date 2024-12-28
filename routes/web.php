@@ -41,10 +41,14 @@ Route::middleware(['auth', 'role:manager'])->group(function () {
 // Supervisor
 Route::middleware(['auth', 'role:supervisor'])->group(function () {
     Route::get('/supervisor/products', [ProductController::class, 'show'])->name('supervisor.products.index');
+    Route::get('/supervisor/transactions', [TransactionController::class, 'show'])->name('supervisor.transactions.index');
+    Route::get('/supervisor/transactions/export-pdf', [TransactionController::class, 'export'])->name('transactions.export-pdf');
+    Route::get('/supervisor/warehouse/export-pdf', [StockMovementController::class, 'export'])->name('stock-movement.export-pdf');
+
 });
 
 // Pegawai Gudang
-Route::middleware(['auth', 'role:pegawai-gudang'])->group(function () {
+Route::middleware(['auth', 'role:pegawai-gudang|supervisor'])->group(function () {
     Route::get('/warehouse/products', [ProductController::class, 'show'])->name('warehouse.products.index');
     Route::get('/warehouse/products/create', [ProductController::class, 'create'])->name('warehouse.products.create');
     Route::post('/warehouse/products/store', [ProductController::class, 'store'])->name('warehouse.products.store');

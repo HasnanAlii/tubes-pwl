@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('List Product') }}
+            {{ __('Daftar Produk') }}
         </h2>
     </x-slot>
 
@@ -20,12 +20,14 @@
                     <x-table>
                         <x-slot name="header">
                             <tr>
-                                <th class="text-center" scope="col">#</th>
+                                <th class="text-center" scope="col">No</th>
                                 <th class="text-center" scope="col">Nama Produk</th>
                                 <td class="text-start"  scope="col">SKU</th>
                                 <th class="text-center" scope="col">Harga</th>
                                 <th class="text-center" scope="col">Stok</th>
-                                <th class="text-center" scope="col">Aksi</th>
+                                @hasrole('kasir|pegawai-gudang')
+                                    <th class="text-center" scope="col">Aksi</th>
+                                @endhasrole
                             </tr>
                         </x-slot>
                         @foreach ($products as $product)
@@ -54,9 +56,9 @@
                                         <x-danger-button type="submit" class="btn btn-danger">Hapus</x-danger-button>
                                     </form>
                                  
-                              </td>    
-                             @endhasrole
-                            </tr>
+                                </td>    
+                                @endhasrole
+                        </tr>
                         @endforeach
                     </x-table>
                    

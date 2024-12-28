@@ -5,34 +5,36 @@ namespace App\Http\Controllers;
 use App\Models\Cabang;
 use App\Models\Product;
 use App\Models\Transaction;
-use App\Models\TransactionDetail;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
     public function index(Request $request)
-{
-    $cabang_id = $request->input('cabang_id');
-    
-    $cabang = Cabang::all();
+    {
+        $cabang_id = $request->input('cabang_id');
+        $cabang = Cabang::all();
 
-    $transactions = [];
-    if ($cabang_id) {
-        $transactions = Transaction::where('cabang_id', $cabang_id)
-            ->with('product') 
-            ->get();
+        $transactions = [];
+        if ($cabang_id) {
+            $transactions = Transaction::where('cabang_id', $cabang_id)
+                ->with(['product', 'user']) // Eager load relasi product dan user (kasir)
+                ->get();
+        }
+
+        return view('transactions.index', compact('cabang', 'transactions'));
     }
 
-    return view('transactions.index' ,compact('cabang','transactions'));
-}
-public function show(Request $request)
-{
-    $user = auth()->user();
-    $transactions =  Transaction::where('cabang_id', $user->cabang_id)->paginate(5);
-    return view('transactions.indexother' ,compact('transactions'));
-}
-    
-    
+    public function show(Request $request)
+    {
+        $user = auth()->user();
+        $transactions = Transaction::where('cabang_id', $user->cabang_id)
+            ->with(['product', 'user']) // Eager load relasi product dan user (kasir)
+            ->paginate(5);
+
+        return view('transactions.indexother', compact('transactions'));
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -52,7 +54,7 @@ public function show(Request $request)
         ]);
 
         foreach ($validated['details'] as $detail) {
-            Transaction::create([
+            TransactionDetail::create([
                 'transaction_id' => $transaction->id,
                 'product_id' => $detail['product_id'],
                 'quantity' => $detail['quantity'],
@@ -66,5 +68,16 @@ public function show(Request $request)
 
         return response()->json($transaction, 201);
     }
-}
+    
+    public function export(Request $request)
+    {
+        
+        $user = auth()->user();
+        $transactions = Transaction::where('cabang_id', $user->cabang_id)->with('product', 'user')->get();
 
+        $pdf = Pdf::loadView('transactions.pdf', compact('transactions'))
+            ->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Transaksi.pdf');
+    }
+}
