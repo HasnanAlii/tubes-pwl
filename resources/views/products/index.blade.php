@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Inventory') }}
+            {{ __('Daftar Produk') }}
         </h2>
     </x-slot>
 
@@ -53,7 +53,7 @@
                   
                     
                 @else
-                    <p class="text-gray-600 dark:text-gray-400">Please select a branch to view the inventory.</p>
+                    <p class="text-gray-600 dark:text-gray-400">Silahkan pilih Cabang Untuk Melihat Data Product.</p>
                 @endif
 
 

@@ -13,20 +13,22 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard ') }}
-                       
-
+                        {{ __('Beranda') }}
+                    
                        @hasrole('owner')
                        <x-nav-link :href="route('owner.products.index')" :active="request()->routeIs('owner.products.index') ">
-                          {{ __('Iventory') }}
+                        {{ __('Produk') }}
                        </x-nav-link>
                        <x-nav-link :href="route('owner.transactions.index')" :active="request()->routeIs('owner.transactions.index') ">
-                       {{ __('Transactions') }}
+                       {{ __('Transaksi') }}
                        </x-nav-link>
+                       <x-nav-link :href="route('owner.employee.index')" :active="request()->routeIs('owner.employee.index') ">
+                        {{ __('Pegawai') }}
+                        </x-nav-link>
                       @endrole
                       @hasrole('manajer')
                        <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
-                          {{ __('Iventory') }}
+                        {{ __('Produk') }}
                        </x-nav-link>
                        <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
                        {{ __('Transactions') }}
@@ -34,13 +36,13 @@
                       @endrole
                       @hasrole('supervisor')
                        <x-nav-link :href="route('supervisor.products.index')" :active="request()->routeIs('supervisor.products.index') ">
-                       {{ __('Daftar produk') }}
+                        {{ __('Produk') }}
                        </x-nav-link>
                        <x-nav-link :href="route('supervisor.transactions.index')" :active="request()->routeIs('supervisor.transactions.index') ">
                        {{ __('Transactions') }}
                        </x-nav-link>
-                       <x-nav-link :href="route('stock-movements.index')" :active="request()->routeIs('stock-movements.index') ">
-                          {{ __('Stok') }}
+                       <x-nav-link :href="route('supervisor.stock-movements.index')" :active="request()->routeIs('supervisor.stock-movements.index') ">
+                          {{ __('Perpindahan Stok') }}
                        </x-nav-link>
                       @endrole
                       @hasrole('pegawai-gudang')
@@ -48,15 +50,15 @@
                           {{ __('Produk') }}
                        </x-nav-link>
                        <x-nav-link :href="route('stock-movements.index')" :active="request()->routeIs('stock-movements.index') ">
-                          {{ __('Stok') }}
+                          {{ __('Perpindahan Stok') }}
                        </x-nav-link>
                       @endrole
                       @hasrole('kasir')
                       <x-nav-link :href="route('cashier.products.index')" :active="request()->routeIs('cashier.products.index') ">
-                        {{ __('Produk') }}
+                        {{ __('Daftar Produk') }}
                      </x-nav-link>
                      <x-nav-link :href="route('cashier.transactions.index')" :active="request()->routeIs('cashier.transactions.index') ">
-                        {{ __('Transactions') }}
+                        {{ __('Transaksi') }}
                         </x-nav-link>
                       @endrole
                     </x-nav-link>

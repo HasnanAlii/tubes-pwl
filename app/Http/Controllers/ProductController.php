@@ -98,7 +98,7 @@ public function show(Request $request)
     
         // Kirim notifikasi
         $notification = array(
-            'message' => "Produk berhasil terjual! Total harga: Rp. " . number_format($totalPrice, 0, ',', '.') . ",-",
+            'message' => "Produk berhasil terjual! Total harga: Rp. " . number_format($totalPrice, 0, ',', '.') . ",000",
             'alert-type' => 'success',
         );
     

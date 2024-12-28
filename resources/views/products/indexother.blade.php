@@ -21,7 +21,7 @@
                         <x-slot name="header">
                             <tr>
                                 <th class="text-center" scope="col">No</th>
-                                <th class="text-center" scope="col">Nama Produk</th>
+                                <th class="text-start" scope="col">Nama Produk</th>
                                 <td class="text-start"  scope="col">SKU</th>
                                 <th class="text-center" scope="col">Harga</th>
                                 <th class="text-center" scope="col">Stok</th>
@@ -32,7 +32,6 @@
                         </x-slot>
                         @foreach ($products as $product)
                         <tr>
-                            <!-- Menampilkan nomor urut yang berkelanjutan -->
                             <td class="text-center">{{ $loop->iteration + ($products->currentPage() - 1) * $products->perPage() }}</td>
                             <td class="text-start">{{ $product->name }}</td>
                             <td class="text-start">{{ $product->sku }}</td>
@@ -43,11 +42,8 @@
                                 <form action="{{ route('cashier.products.sell', $product->id) }}" method="GET">
                                     <x-succes-button type="submit" class="btn btn-Sold">Sold</x-succes-button>
                                 </form>
-                              
-                                
                             </td>     
                          @endhasrole
-                      
                                 @hasrole('pegawai-gudang')
                                 <td class="text-center">                
                                     <form action="{{ route('warehouse.products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini?');">
@@ -55,13 +51,11 @@
                                         @method('DELETE')
                                         <x-danger-button type="submit" class="btn btn-danger">Hapus</x-danger-button>
                                     </form>
-                                 
                                 </td>    
                                 @endhasrole
                         </tr>
                         @endforeach
                     </x-table>
-                   
                     <div class="mt-4">
                         <div class="flex justify-center">
                             <ul class="flex space-x-2">
@@ -69,9 +63,6 @@
                             </ul>
                         </div>
                     </div>
-                    
-                 
-
                 </div>
             </div>
         </div>

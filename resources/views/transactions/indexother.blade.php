@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Inventory') }}
+            {{ __('Daftar Transaksi') }}
         </h2>
     </x-slot>
 
@@ -20,27 +20,23 @@
                         <x-slot name="header">
                             <tr>
                                 <th class="text-center">No</th>
-                                <th class="text-center">ID Transaksi</th>
+                                <th class="text-start">Nama Kasir</th>
                                 <th class="text-start">Nama Produk</th>
                                 <th class="text-center">Jumlah</th>
-                                <th class="text-center">Harga</th>
-                                <th class="text-center">SubTotal</th>
-                                @hasrole('supervisor')
-                                    <th class="text-center">Nama Kasir</th>
-                                @endhasrole
+                                <th class="text-start">Harga</th>
+                                <th class="text-start">SubTotal</th>
                             </tr>
                         </x-slot>
                         @foreach ($transactions as $transaction)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center">{{ $transaction->id }}</td>
+                                <th class="text-start">{{ $transaction->user->name }}</td>
                                 <td class="text-start">{{ $transaction->product->name }}</td>
                                 <td class="text-center">{{ $transaction->quantity }}</td>
-                                <td class="text-center">{{ $transaction->price }}</td>
-                                <td class="text-center">{{ $transaction->subtotal }}</td>
-                                @hasrole('supervisor')
-                                    <td class="text-center">{{ $transaction->user->name }}</td>
-                                @endhasrole
+                                <th class="text-start">RP. {{ $transaction->price }}</td>
+                                <th class="text-start">RP. {{ $transaction->subtotal }}</td>
+                             
+                            
                             </tr>
                         @endforeach
                     </x-table>

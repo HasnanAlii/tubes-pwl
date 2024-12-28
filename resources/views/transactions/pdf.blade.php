@@ -40,8 +40,8 @@
                     <td>{{ $transaction->id }}</td>
                     <td>{{ $transaction->product->name ?? '-' }}</td>
                     <td>{{ $transaction->quantity }}</td>
-                    <td>Rp {{ number_format($transaction->price, 0, ',', '.') }}</td>
-                    <td>Rp {{ number_format($transaction->subtotal, 0, ',', '.') }}</td>
+                    <td>Rp {{ number_format($transaction->price, 0, ',', '.') }}.000</td>
+                    <td>Rp {{ number_format($transaction->subtotal, 0, ',', '.') }}.000</td>
                     <td>{{ $transaction->user->name ?? '-' }}</td>
                 </tr>
             @endforeach

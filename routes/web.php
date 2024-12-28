@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\StockMovementController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // dd('Route file is loaded');
@@ -31,6 +32,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'role:owner'])->group(function () {
     Route::get('/owner/products', [ProductController::class, 'index'])->name('owner.products.index');
     Route::get('/owner/transactions', [TransactionController::class, 'index'])->name('owner.transactions.index');
+    Route::get('/owner/employee', [UserController::class, 'index'])->name('owner.employee.index');
+
 });
 
 // Manager
@@ -44,17 +47,18 @@ Route::middleware(['auth', 'role:supervisor'])->group(function () {
     Route::get('/supervisor/transactions', [TransactionController::class, 'show'])->name('supervisor.transactions.index');
     Route::get('/supervisor/transactions/export-pdf', [TransactionController::class, 'export'])->name('transactions.export-pdf');
     Route::get('/supervisor/warehouse/export-pdf', [StockMovementController::class, 'export'])->name('stock-movement.export-pdf');
+    Route::get('/supervisor/stock-movements', [StockMovementController::class, 'index'])->name('supervisor.stock-movements.index');
+
 
 });
 
 // Pegawai Gudang
-Route::middleware(['auth', 'role:pegawai-gudang|supervisor'])->group(function () {
+Route::middleware(['auth', 'role:pegawai-gudang'])->group(function () {
     Route::get('/warehouse/products', [ProductController::class, 'show'])->name('warehouse.products.index');
     Route::get('/warehouse/products/create', [ProductController::class, 'create'])->name('warehouse.products.create');
     Route::post('/warehouse/products/store', [ProductController::class, 'store'])->name('warehouse.products.store');
     Route::get('/warehouse/products/indexother', [ProductController::class, 'show'])->name('warehouse.products.indexother');
     Route::delete('/warehouse/products/{id}', [ProductController::class, 'destroy'])->name('warehouse.products.destroy');
-
     Route::get('/warehouse/stock-movements', [StockMovementController::class, 'index'])->name('stock-movements.index');
     Route::get('/warehouse/stock-movements/create', [StockMovementController::class, 'create'])->name('stock-movements.create');
     Route::post('/warehouse/stock-movements/store', [StockMovementController::class, 'store'])->name('stock-movements.store');

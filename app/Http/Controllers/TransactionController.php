@@ -54,7 +54,7 @@ class TransactionController extends Controller
         ]);
 
         foreach ($validated['details'] as $detail) {
-            TransactionDetail::create([
+            Transaction::create([
                 'transaction_id' => $transaction->id,
                 'product_id' => $detail['product_id'],
                 'quantity' => $detail['quantity'],

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Daftar Stok') }}
+            {{ __('Perpindahan Stok') }}
         </h2>
     </x-slot>
 
@@ -25,6 +25,7 @@
                         <x-slot name="header">
                             <tr>
                                 <th class="text-center" scope="col">No</th>
+                                <th class="text-start" scope="col">Nama Pegawai</th>
                                 <th class="text-start" scope="col">Produk</th>
                                 <th class="text-center" scope="col">Tipe</th>
                                 <th class="text-center" scope="col">Jumlah</th>
@@ -35,6 +36,7 @@
                         @foreach ($stockMovements as $movement)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
+                                <td class="text-start">{{ $movement->user->name ?? '-' }}</td>
                                 <td class="text-start">{{ $movement->product->name ?? '-' }}</td>
                                 <td class="text-center">{{ $movement->type === 'in' ? 'Masuk' : 'Keluar' }}</td>
                                 <td class="text-center">{{ $movement->quantity }}</td>

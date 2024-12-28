@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
         
         //Cabang 1
         User::factory()->create([
-            'name' => 'manager',
+            'name' => 'Andi Wijaya',
             'email' => 'manager1@gmail.com',
             'role' => 'manager',
             'cabang_id' => 1,
@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
          ])->assignRole('manager');
 
          User::factory()->create([
-            'name' => 'supervisor',
+            'name' => 'Budi Santoso',
             'email' => 'supervisor1@gmail.com',
             'role' => 'supervisor',
             'cabang_id' => 1,
@@ -43,7 +43,7 @@ class UserSeeder extends Seeder
          ])->assignRole('supervisor');
 
          User::factory()->create([
-            'name' => 'pegawai gudang',
+            'name' => 'Citra Dewi',
             'email' => 'pegawaigudang1@gmail.com',
             'role' => 'pegawai gudang',
             'cabang_id' => 1,
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
          ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
-            'name' => 'kasir',
+            'name' => 'Dian Pertiwi',
             'email' => 'kasir1@gmail.com',
             'role' => 'kasir',
             'cabang_id' => 1,
@@ -63,7 +63,7 @@ class UserSeeder extends Seeder
 
          //Cabang 2
         User::factory()->create([
-            'name' => 'manager',
+            'name' => 'Eko Prasetyo',
             'email' => 'manager2@gmail.com',
             'role' => 'manager',
             'cabang_id' => 2,
@@ -72,7 +72,7 @@ class UserSeeder extends Seeder
          ])->assignRole('manager');
 
          User::factory()->create([
-            'name' => 'supervisor',
+            'name' => 'Fitri Handayani',
             'email' => 'supervisor2@gmail.com',
             'role' => 'supervisor',
             'cabang_id' => 2,
@@ -81,7 +81,7 @@ class UserSeeder extends Seeder
          ])->assignRole('supervisor');
 
          User::factory()->create([
-            'name' => 'pegawai gudang',
+            'name' => 'Gilang Ramadhan',
             'email' => 'pegawaigudang2@gmail.com',
             'role' => 'pegawai gudang',
             'cabang_id' => 2,
@@ -90,7 +90,7 @@ class UserSeeder extends Seeder
          ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
-            'name' => 'kasir',
+            'name' => 'Hesti Ayu',
             'email' => 'kasir2@gmail.com',
             'role' => 'kasir',
             'cabang_id' => 2,
@@ -101,7 +101,7 @@ class UserSeeder extends Seeder
 
           //Cabang 3
         User::factory()->create([
-            'name' => 'manager',
+            'name' => 'Irfan Maulana',
             'email' => 'manager3@gmail.com',
             'role' => 'manager',
             'cabang_id' => 3,
@@ -110,7 +110,7 @@ class UserSeeder extends Seeder
          ])->assignRole('manager');
 
          User::factory()->create([
-            'name' => 'supervisor',
+            'name' => 'Joko Triyono',
             'email' => 'supervisor3@gmail.com',
             'role' => 'supervisor',
             'cabang_id' => 3,
@@ -119,7 +119,7 @@ class UserSeeder extends Seeder
          ])->assignRole('supervisor');
 
          User::factory()->create([
-            'name' => 'pegawai gudang',
+            'name' => 'Kiki Amalia',
             'email' => 'pegawaigudang3@gmail.com',
             'role' => 'pegawai gudang',
             'cabang_id' => 3,
@@ -128,7 +128,7 @@ class UserSeeder extends Seeder
          ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
-            'name' => 'kasir',
+            'name' => 'Lina Safitri',
             'email' => 'kasir3@gmail.com',
             'role' => 'kasir',
             'cabang_id' => 3,
@@ -139,7 +139,7 @@ class UserSeeder extends Seeder
 
           //Cabang 4
         User::factory()->create([
-            'name' => 'manager',
+            'name' => 'Miko Andika',
             'email' => 'manager4@gmail.com',
             'role' => 'manager',
             'cabang_id' => 4,
@@ -148,7 +148,7 @@ class UserSeeder extends Seeder
          ])->assignRole('manager');
 
          User::factory()->create([
-            'name' => 'supervisor',
+            'name' => 'Nina Kartika',
             'email' => 'supervisor4@gmail.com',
             'role' => 'supervisor',
             'cabang_id' => 4,
@@ -157,7 +157,7 @@ class UserSeeder extends Seeder
          ])->assignRole('supervisor');
 
          User::factory()->create([
-            'name' => 'pegawai gudang',
+            'name' => 'Oni Suryani',
             'email' => 'pegawaigudang4@gmail.com',
             'role' => 'pegawai gudang',
             'cabang_id' => 4,
@@ -166,7 +166,7 @@ class UserSeeder extends Seeder
          ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
-            'name' => 'kasir',
+            'name' => 'Prita Melati',
             'email' => 'kasir4@gmail.com',
             'role' => 'kasir',
             'cabang_id' => 4,
@@ -177,7 +177,7 @@ class UserSeeder extends Seeder
 
           //Cabang 5
         User::factory()->create([
-            'name' => 'manager',
+            'name' => 'Qori Ahmad',
             'email' => 'manager5@gmail.com',
             'role' => 'manager',
             'cabang_id' => 5,
@@ -186,7 +186,7 @@ class UserSeeder extends Seeder
          ])->assignRole('manager');
 
          User::factory()->create([
-            'name' => 'supervisor',
+            'name' => 'Rini Fatmawati',
             'email' => 'supervisor5@gmail.com',
             'role' => 'supervisor',
             'cabang_id' => 5,
@@ -195,7 +195,7 @@ class UserSeeder extends Seeder
          ])->assignRole('supervisor');
 
          User::factory()->create([
-            'name' => 'pegawai gudang',
+            'name' => 'Siti Hajar',
             'email' => 'pegawaigudang5@gmail.com',
             'role' => 'pegawai gudang',
             'cabang_id' => 5,
@@ -204,19 +204,12 @@ class UserSeeder extends Seeder
          ])->assignRole('pegawai-gudang');
 
          User::factory()->create([
-            'name' => 'kasir',
+            'name' => 'Tono Setiawan',
             'email' => 'kasir5@gmail.com',
             'role' => 'kasir',
             'cabang_id' => 5,
             'created_at' => now(),
             'updated_at' => now(),
          ])->assignRole('kasir');
-
-
-
-
-
-
-        
     }
 }
