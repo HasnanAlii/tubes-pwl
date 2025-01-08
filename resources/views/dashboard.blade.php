@@ -12,29 +12,29 @@
                     @hasallroles('kasir')
                         {{ __("Selamat Datang, Di Minimarket Pak Jayusman Cabang " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
-                            {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
+                            {{ __( Auth::user()->name . " selaku ". Auth::user()->role) }}
                         </div>
                         @endhasrole
                         @hasallroles('supervisor')
                         {{ __("Selamat Datang, Di Minimarket Pak Jayusman Cabang " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
-                            {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
+                            {{ __( Auth::user()->name . " selaku ". Auth::user()->role) }}
                         </div>
                         @endhasrole
                         @hasallroles('pegawai-gudang')
                         {{ __("Selamat Datang, Di Minimarket Pak Jayusman Cabang " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
-                            {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
+                            {{ __( Auth::user()->name . " selaku ". Auth::user()->role) }}
                         </div>
                         @endhasrole
                         @hasallroles('manager')
                         {{ __("Selamat Datang, Di Minimarket Pak Jayusman Cabang " . Auth::user()->cabang->name) }}
                         <div class="p-6 text-gray-900 dark:text-gray-100 text-3xl">
-                            {{ __("Mr/Mrs " . Auth::user()->name . "!") }}
+                            {{ __( Auth::user()->name . " selaku ". Auth::user()->role) }}
                         </div>
                         @endhasrole
                         @hasallroles('owner')
-                        {{ __("Selamat Datang, Yang Terhormat Pak " . Auth::user()->name . "") }}
+                        {{ __("Selamat Datang, Yang Terhormat Pak " . Auth::user()->name . " selaku ". Auth::user()->role) }}
                         @endhasrole
              
                     

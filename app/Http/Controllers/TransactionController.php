@@ -18,7 +18,7 @@ class TransactionController extends Controller
         $transactions = [];
         if ($cabang_id) {
             $transactions = Transaction::where('cabang_id', $cabang_id)
-                ->with(['product', 'user']) // Eager load relasi product dan user (kasir)
+                ->with(['product', 'user']) 
                 ->get();
         }
 
@@ -29,7 +29,7 @@ class TransactionController extends Controller
     {
         $user = auth()->user();
         $transactions = Transaction::where('cabang_id', $user->cabang_id)
-            ->with(['product', 'user']) // Eager load relasi product dan user (kasir)
+            ->with(['product', 'user']) 
             ->paginate(5);
 
         return view('transactions.indexother', compact('transactions'));
@@ -80,4 +80,8 @@ class TransactionController extends Controller
 
         return $pdf->stream('Transaksi.pdf');
     }
-}
+    
+    }
+  
+
+

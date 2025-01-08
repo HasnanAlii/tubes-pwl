@@ -33,21 +33,27 @@ Route::middleware(['auth', 'role:owner'])->group(function () {
     Route::get('/owner/products', [ProductController::class, 'index'])->name('owner.products.index');
     Route::get('/owner/transactions', [TransactionController::class, 'index'])->name('owner.transactions.index');
     Route::get('/owner/employee', [UserController::class, 'index'])->name('owner.employee.index');
+    
 
 });
+
 
 // Manager
 Route::middleware(['auth', 'role:manager'])->group(function () {
     Route::get('/manager/products', [ProductController::class, 'show'])->name('manager.products.index');
-});
+    Route::get('/manager/transactions', [TransactionController::class, 'show'])->name('manager.transactions.index');
+    Route::get('/manager/transactions/export-pdf', [TransactionController::class, 'export'])->name('transactions.export-pdf');
+    Route::get('/manager/product/export-pdf', [ProductController::class, 'export'])->name('product.export-pdf');
+    Route::get('/manager/stock-movements', [StockMovementController::class, 'index'])->name('manager.stock-movements.index');
+    Route::get('/manager/warehouse/export-pdf', [StockMovementController::class, 'export'])->name('stock-movement.export-pdf');
 
+});
 // Supervisor
 Route::middleware(['auth', 'role:supervisor'])->group(function () {
     Route::get('/supervisor/products', [ProductController::class, 'show'])->name('supervisor.products.index');
     Route::get('/supervisor/transactions', [TransactionController::class, 'show'])->name('supervisor.transactions.index');
-    Route::get('/supervisor/transactions/export-pdf', [TransactionController::class, 'export'])->name('transactions.export-pdf');
-    Route::get('/supervisor/warehouse/export-pdf', [StockMovementController::class, 'export'])->name('stock-movement.export-pdf');
-    Route::get('/supervisor/stock-movements', [StockMovementController::class, 'index'])->name('supervisor.stock-movements.index');
+    Route::get('/supervisor/transactions/export-pdf', [TransactionController::class, 'export'])->name('supervisor.transactions.export-pdf');
+    Route::get('/supervisor/product/export-pdf', [ProductController::class, 'export'])->name('supervisor.product.export-pdf');
 
 
 });

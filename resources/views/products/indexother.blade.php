@@ -16,6 +16,20 @@
                         </x-primary-button>
                     </div>
                     @endhasrole
+                          @hasrole ('manager')
+                        <div class="flex justify-end px-20">
+                            <x-primary-button tag="a" href="{{ route('product.export-pdf') }}">
+                                Cetak PDF
+                            </x-primary-button>
+                        </div>
+                    @endhasrole
+                    @hasrole ('supervisor')
+                  <div class="flex justify-end px-20">
+                      <x-primary-button tag="a" href="{{ route('supervisor.product.export-pdf') }}">
+                          Cetak PDF
+                      </x-primary-button>
+                  </div>
+              @endhasrole
 
                     <x-table>
                         <x-slot name="header">

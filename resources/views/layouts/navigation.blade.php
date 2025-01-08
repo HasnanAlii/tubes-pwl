@@ -26,12 +26,15 @@
                         {{ __('Pegawai') }}
                         </x-nav-link>
                       @endrole
-                      @hasrole('manajer')
-                       <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
+                      @hasrole('manager')
+                       <x-nav-link :href="route('manager.products.index')" :active="request()->routeIs('manager.products.index') ">
                         {{ __('Produk') }}
                        </x-nav-link>
-                       <x-nav-link :href="route('index')" :active="request()->routeIs('index') ">
+                       <x-nav-link :href="route('manager.transactions.index')" :active="request()->routeIs('manager.transactions.index') ">
                        {{ __('Transactions') }}
+                       </x-nav-link>
+                       <x-nav-link :href="route('manager.stock-movements.index')" :active="request()->routeIs('manager.stock-movements.index') ">
+                          {{ __('Perpindahan Stok') }}
                        </x-nav-link>
                       @endrole
                       @hasrole('supervisor')
@@ -40,9 +43,6 @@
                        </x-nav-link>
                        <x-nav-link :href="route('supervisor.transactions.index')" :active="request()->routeIs('supervisor.transactions.index') ">
                        {{ __('Transactions') }}
-                       </x-nav-link>
-                       <x-nav-link :href="route('supervisor.stock-movements.index')" :active="request()->routeIs('supervisor.stock-movements.index') ">
-                          {{ __('Perpindahan Stok') }}
                        </x-nav-link>
                       @endrole
                       @hasrole('pegawai-gudang')
