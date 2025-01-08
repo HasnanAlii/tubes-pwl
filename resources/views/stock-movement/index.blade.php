@@ -9,13 +9,13 @@
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{-- @hasrole ('supervisor')
+                    @hasrole ('manager')
                         <div class="flex justify-end px-20">
                             <x-primary-button tag="a" href="{{ route('stock-movement.export-pdf') }}">
                                 Cetak PDF
                             </x-primary-button>
                         </div>
-                    @endhasrole --}}
+                    @endhasrole
                     @hasrole ('pegawai-gudang')
                         <div class="flex justify-end px-20">
                             <x-primary-button tag="a" href="{{ route('stock-movements.create') }}">Tambah Stock</x-primary-button>

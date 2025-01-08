@@ -6,6 +6,8 @@ use App\Models\Cabang;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class ProductController extends Controller
 {
@@ -110,5 +112,15 @@ public function soldPage($id)
     $product = Product::findOrFail($id); // Pastikan produk ditemukan
     return view('products.sold', compact('product'));
 }
+
+public function export()
+    {
+        $user = auth()->user();
+        $products = Product::where('cabang_id', $user->cabang_id)->get();
+
+        $pdf = PDF::loadView('Products.pdf', compact('products'))->setPaper('a4', 'landscape');
+        return $pdf->stream('Products.pdf'); 
+       
+    }
 
 }

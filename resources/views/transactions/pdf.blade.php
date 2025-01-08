@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transactions</title>
+    <title>Transaksi</title>
     <style>
         table {
-            width: 100%;
+            width: 80%;
             border-collapse: collapse;
+            margin: 20px auto;
+        }
+        table, th, td {
+            border: 1px solid black;
         }
         th, td {
-            border: 1px solid black;
-            text-align: center;
-            padding: 8px;
+            padding: 8px 12px;
+            text-align: left;
         }
         th {
             background-color: #f2f2f2;
         }
+        h2 {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h2 style="text-align: center;">Laporan Transaksi</h2>
+    <h2>Laporan Transaksi Minimarket Pak jayusman Cabang {{Auth::user()->cabang->name}}</h2>
     <table>
         <thead>
             <tr>

@@ -69,11 +69,15 @@ class StockMovementController extends Controller
 
     public function export()
     {
-        $stockMovements = StockMovement::with('product')->get();
 
-        $pdf = PDF::loadView('stock-movement.pdf', compact('stockMovements'));
-        return $pdf->stream('Stock.pdf'); // Menampilkan PDF langsung
-        // return $pdf->download('stock-movement.pdf'); // Untuk langsung diunduh
+        $user = auth()->user();
+        $stockMovements = StockMovement::where('cabang_id', $user->cabang_id)->with('product')->get();
+        
+
+        $pdf = PDF::loadView('stock-movement.pdf', compact('stockMovements'))->setPaper('a4', 'landscape');
+        return $pdf->stream('Stock.pdf');
+     
     }
+   
     
 }
